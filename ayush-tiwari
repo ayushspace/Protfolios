@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Kumar Tiwari | Digital Brand Hub</title>
+    <style>
+        :root {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --accent: #f59e0b;
+            --accent-teal: #38bdf8;
+            --whatsapp-green: #25d366;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 10px 0;
+        }
+
+        /* Hero Header Workspace Panel */
+        header {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 35px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            header {
+                flex-direction: row;
+                text-align: left;
+                gap: 35px;
+            }
+        }
+
+        .profile-img {
+            width: 145px;
+            height: 145px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.2.5);
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        .profile-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+
+        .tagline {
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .links-grid {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .contact-pill {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-pill:hover {
+            border-color: var(--accent-teal);
+            color: #ffffff;
+            background: rgba(56, 189, 248, 0.08);
+            transform: translateY(-2px);
+        }
+
+        /* Interactive Connected Messaging Node */
+        .btn-whatsapp {
+            background: rgba(37, 211, 102, 0.08);
+            border-color: rgba(37, 211, 102, 0.4);
+            color: #25d366;
+            font-weight: 600;
+        }
+
+        .btn-whatsapp:hover {
+            background: var(--whatsapp-green);
+            color: #0f172a;
+            border-color: var(--whatsapp-green);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .pill-icon {
+            width: 15px;
+            height: 15px;
+            fill: currentColor;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* Layout Architecture Split */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-heading {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 22px;
+            padding-left: 12px;
+            border-left: 4px solid var(--accent);
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pitch-box {
+            background: rgba(245, 158, 11, 0.01);
+            border: 1px dashed var(--border);
+            padding: 18px;
+            border-radius: 12px;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        /* Structural Operations Feed Timeline */
+        .timeline-container {
+            margin-top: 15px;
+        }
+
+        .timeline-item {
+            border-left: 2px solid var(--border);
+            padding-left: 22px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 10px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-teal);
+            transition: all 0.2s ease;
+        }
+
+        .timeline-item:hover::before {
+            background: var(--accent);
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        .job-date {
+            color: var(--accent-teal);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(56, 189, 248, 0.1);
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+
+        .job-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .bullets-list {
+            list-style-type: square;
+            padding-left: 18px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-align: justify;
+        }
+
+        .bullets-list li {
+            margin-bottom: 6px;
+        }
+
+        /* High-Definition University Logo Adapters */
+        .logo-badge-container {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--border);
+            padding: 14px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s ease;
+        }
+
+        .logo-badge-container:hover {
+            border-color: rgba(245, 158, 11, 0.25);
+        }
+
+        .uni-logo-img {
+            width: 54px;
+            height: 54px;
+            object-fit: contain; 
+            border-radius: 8px;
+            background-color: #ffffff;
+            padding: 5px;
+            border: 1px solid #cbd5e1;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .logo-details {
+            flex: 1;
+        }
+
+        .logo-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #ffffff;
+        }
+
+        .logo-issuer {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        /* Scalable Skill Ecosystem Panels */
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            color: #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .tag-accent {
+            border-color: rgba(245, 158, 11, 0.2.5);
+            color: var(--accent);
+            background: rgba(245, 158, 11, 0.02);
+            font-weight: 600;
+        }
+
+        .award-card {
+            background: rgba(255,255,255,0.01);
+            border: 1px solid var(--border);
+            padding: 14px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .award-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+
+        .award-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px dashed var(--border);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header Board Workspace Setup -->
+        <header>
+            <img src="0eddbd48-472d-47b0-882c-fc884e9382a2 (1).jpg" alt="Ayush Kumar Tiwari" class="profile-img">
+            <div class="header-info">
+                <h1 class="profile-title">Ayush Kumar Tiwari</h1>
+                <p class="tagline">Advanced Sports Venue Specialist & Operations Manager</p>
+                <div class="links-grid">
+                    <!-- 1. LinkedIn Vector Matrix Link -->
+                    <a href="https://linkedin.com/in/ayush-kumar-tiwari-5b6a08282" target="_blank" class="contact-pill">
+                        <svg class="pill-icon" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        LinkedIn Profile
+                    </a>
+                    <!-- 2. Integrated Email Routing -->
+                    <a href="mailto:ayushsportsevents@gmail.com" class="contact-pill">
+                        <svg class="pill-icon" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v14.438h24v-14.438l-12 9.725z"/></svg>
+                        ayushsportsevents@gmail.com
+                    </a>
+                    <!-- 3. Dynamic Messaging Target -->
+                    <a href="https://wa.me/918957359112?text=Hello%20ayush%20i%20want%20to%20talk%20with%20you.." target="_blank" class="contact-pill btn-whatsapp">
+                        <svg class="pill-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.992-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.443-4.417-9.859-9.869-9.859-5.451 0-9.887 4.434-9.89 9.885-.001 2.224.608 3.756 1.654 5.442l-.997 3.642 3.73-.977zm11.382-7.051c-.29-.145-1.716-.847-1.981-.942-.266-.096-.459-.145-.653.146-.193.29-.748.942-.917 1.134-.169.192-.338.217-.628.072-.29-.145-1.223-.45-2.328-1.437-.86-.767-1.441-1.714-1.61-2.004-.169-.29-.018-.447.127-.591.131-.13.29-.338.435-.507.145-.169.193-.29.29-.483.097-.193.048-.361-.024-.506-.072-.145-.653-1.573-.895-2.151-.235-.565-.475-.489-.653-.497-.169-.008-.362-.008-.555-.008-.193 0-.507.072-.772.361-.266.291-1.014.992-1.014 2.417 0 1.425 1.038 2.801 1.182 2.994.145.193 2.044 3.121 4.951 4.378.692.299 1.233.478 1.654.612.695.221 1.329.19 1.83.115.558-.084 1.716-.7 1.958-1.374.242-.674.242-1.253.169-1.374-.073-.121-.266-.193-.556-.338z"/></svg>
+                        +91 89573 59112
+                    </a>
+                    <!-- 4. Secondary Line -->
+                    <span class="contact-pill">
+                        <svg class="pill-icon" viewBox="0 0 24 24"><path d="M20 22.622l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.714-7.82-4.484-8.922.093-.045 1.982-.988 1.982-.988l-3.521-6.928s-1.845.893-1.991.966c-4.14 2.054-1.05 13.203 3.033 21.206 4.018 7.874 12.395 3.326 12.573 3.228.172-.095 1.993-1.778 1.993-1.778z"/></svg>
+                        +91 72818 85515
+                    </span>
+                    <!-- 5. Instagram Frame Anchor -->
+                    <a href="https://instagram.com/ayushkrtiwari" target="_blank" class="contact-pill">
+                        <svg class="pill-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        @ayushkrtiwari
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Master Body Architecture -->
+        <div class="grid-layout">
+            
+            <!-- LEFT COLUMN PANEL: Operations Engine -->
+            <div class="main-panel">
+                <div class="panel">
+                    <h2 class="section-heading">Executive Profile</h2>
+                    <div class="pitch-box">
+                        High-performing Sports Operations and Corporate Event Specialist with a proven track record of orchestrating large-scale National, State-level mega sports events, and trade exhibitions[cite: 2]. Expert in leading multi-stakeholder ecosystems, venue overlays, production pipelines, technical score-presentation integration, and vendor operations under strict NADA and ACU compliance structures[cite: 2]. Powered by an MBA framework and advanced AI application workflows[cite: 2].
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h2 class="section-heading">Sports Venue Management Experience</h2>
+                    <div class="timeline-container">
+                        
+                        <!-- Track Node 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <span class="job-title">Venue Manager (Operations) — <em>Sports NX</em></span>
+                                <span class="job-date">Mar 2026 – Apr 2026</span>
+                            </div>
+                            <div class="job-meta">Khelo India Tribal Games, Chhattisgarh | Sports: Wrestling & Mallakhambh[cite: 2]</div>
+                            <ul class="bullets-list">
+                                <li>Commanded overall venue layouts as central POC for athletic federations and overlay vendors while implementing rigid field safety, branding setups, and secure boundaries[cite: 2].</li>
+                                <li>Liaised directly with NADA authorities to deploy clean dope testing frameworks and tactical medical emergency mapping grids[cite: 2].</li>
+                            </ul>
+                        </div>
+
+                        <!-- Track Node 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <span class="job-title">Venue Manager (Operations) — <em>Showboat</em></span>
+                                <span class="job-date">Jan 2026 – Feb 2026</span>
+                            </div>
+                            <div class="job-meta">Khelo MP Youth Games, Madhya Pradesh | Sports: Judo[cite: 2]</div>
+                            <ul class="bullets-list">
+                                <li>Directed combat sports operations including field-of-play layouts, scoreboard technology configuration, and strict weight-class protocol controls[cite: 2].</li>
+                                <li>Supervised expansive ACT infrastructure maps coordinating catering grids, fleet transit models, and VIP accommodation blocks for state contingents[cite: 2].</li>
+                            </ul>
+                        </div>
+
+                        <!-- Track Node 3 -->
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <span class="job-title">Venue Manager (Operations) — <em>1x Sports</em></span>
+                                <span class="job-date">Dec 2025 – Jan 2026</span>
+                            </div>
+                            <div class="job-meta">Uttar Pradesh Kabaddi League (UPKL), Noida[cite: 2]</div>
+                            <ul class="bullets-list">
+                                <li>Enforced robust venue safeguards by collaborating directly with the Anti-Corruption Unit (ACU) to implement fair-play matrices and stadium security controls[cite: 2].</li>
+                                <li>Supervised massive workforces of security guards, specialized bouncers, and housekeeping modules to thoroughly eliminate matchday crowd hazards[cite: 2].</li>
+                            </ul>
+                        </div>
+
+                        <!-- Track Node 4 -->
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <span class="job-title">Venue Manager (Operations) — <em>Go Bananas</em></span>
+                                <span class="job-date">Nov 2025 – Dec 2025</span>
+                            </div>
+                            <div class="job-meta">Khelo India University Games, Rajasthan | Sports: Rugby & Kho Kho[cite: 2]</div>
+                            <ul class="bullets-list">
+                                <li>Spearheaded structural field overlays and digital presentations while blueprinting intense crowd-flow maps alongside state police units[cite: 2].</li>
+                                <li>Monitored multi-tier volunteer groups and ground crew deployments to ensure premium venue hygiene and emergency safety matrices[cite: 2].</li>
+                            </ul>
+                        </div>
+
+                        <!-- Track Node 5 -->
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <span class="job-title">Venue Manager (Operations) — <em>Sports For All (SFA)</em></span>
+                                <span class="job-date">Apr 2025 – May 2025</span>
+                            </div>
+                            <div class="job-meta">Khelo India Youth Games, Bihar | Sports: Archery & Badminton[cite: 2]</div>
+                            <ul class="bullets-list">
+                                <li>Engineered high-standard indoor and outdoor venue overlay structures while integrating district police networks and civic medical units for comprehensive athlete protection[cite: 2].</li>
+                            </ul>
+                        </div>
+
+                        <!-- Track Node 6 -->
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <span class="job-title">Venue Manager (Operations) — <em>DDEPL</em></span>
+                                <span class="job-date">Jan 2025 – Feb 2025</span>
+                            </div>
+                            <div class="job-meta">38th National Games, Uttarakhand | Sports: Rugby & Athletics[cite: 2]</div>
+                            <ul class="bullets-list">
+                                <li>Commanded flagship athletic stadium operations, seamlessly aligning heavy broadcast production, massive overlays, technical scoreboard teams, and secure anti-doping zones[cite: 2].</li>
+                            </ul>
+                        </div>
+
+                        <!-- Track Node 7 -->
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <span class="job-title">Operations Specialist — <em>Dani Sports Foundation</em></span>
+                                <span class="job-date">Aug 2024 – Sep 2024</span>
+                            </div>
+                            <div class="job-meta">Ultimate Table Tennis (UTT), Chennai[cite: 2]</div>
+                            <ul class="bullets-list">
+                                <li>Coordinated field-of-play logistics, arena branding alignments, and player lounge support tasks for high-speed franchise league layouts[cite: 2].</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Commercial Exhibition Array -->
+                <div class="panel">
+                    <h2 class="section-heading">Corporate Events & Exhibitions</h2>
+                    <div class="timeline-container">
+                        <div class="timeline-item" style="margin-bottom: 0;">
+                            <div class="timeline-header">
+                                <span class="job-title">Production Assistant — <em>Ice Studio (Freelance)</em></span>
+                                <span class="job-date">Jan 2026</span>
+                            </div>
+                            <div class="job-meta">International Material Recycling Conference (IMRC 2026), Novotel Jaipur Centre</div>
+                            <ul class="bullets-list">
+                                <li>Supervised on-site fabrication setups, stage production layouts, and stall overlay coordination grids for the global trade exhibition.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auxiliary Management Track -->
+                <div class="panel">
+                    <h2 class="section-heading">Assistant Venue Management Track</h2>
+                    <div class="timeline-container">
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <span class="job-title">Assistant Venue Manager — <em>DDEPL</em></span>
+                                <span class="job-date">Feb 2024 – Mar 2024</span>
+                            </div>
+                            <div class="job-meta">Khelo India University Games, Guwahati | Sports: Rugby & Athletics[cite: 2]</div>
+                            <ul class="bullets-list">
+                                <li>Assisted the Venue Manager across track readiness logistics, multi-vendor asset allocations, and rigorous athlete hospitality management[cite: 2].</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <span class="job-title">Assistant Venue Manager — <em>SFA</em></span>
+                                <span class="job-date">Jan 2024 – Feb 2024</span>
+                            </div>
+                            <div class="job-meta">Khelo India Youth Games, Chennai | Sports: Archery & Squash[cite: 2]</div>
+                            <ul class="bullets-list">
+                                <li>Supported venue management pipelines tracking procurement schedules, overlay verification, and VIP gallery seating templates[cite: 2].</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <span class="job-title">Assistant Venue Manager — <em>SFA</em></span>
+                                <span class="job-date">Oct 2023 – Nov 2023</span>
+                            </div>
+                            <div class="job-meta">37th National Games, Goa | Sports: Shooting[cite: 2]</div>
+                            <ul class="bullets-list">
+                                <li>Managed precise range backend workflows, coordinating armory movement security logs and technical conduct layouts[cite: 2].</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item" style="margin-bottom: 0;">
+                            <div class="timeline-header">
+                                <span class="job-title">Spectator Engagement Manager — <em>DDEPL</em></span>
+                                <span class="job-date">Dec 2023</span>
+                            </div>
+                            <div class="job-meta">Khelo India Para Games, Delhi[cite: 2]</div>
+                            <ul class="bullets-list">
+                                <li>Deployed custom crowd interaction blueprints to build event awareness while engineering customized experiences for para-athletes[cite: 2].</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL COLUMN: Metric Trackers & Verified Badges -->
+            <div class="sidebar-panel">
+                
+                <!-- Academic History Grid -->
+                <div class="panel">
+                    <h2 class="section-heading">Education Ecosystem</h2>
+                    <div class="timeline-item">
+                        <div class="job-title" style="font-size:0.95rem;">MBA (Business Administration)[cite: 2]</div>
+                        <div class="job-meta" style="color:var(--accent-teal); font-size:0.8rem; margin:2px 0;">PURSUING (2025)[cite: 2]</div>
+                        <div style="font-size:0.85rem; color:var(--text-muted);">Manipal University Jaipur[cite: 2]</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="job-title" style="font-size:0.95rem;">Graduation (Bachelor's Degree)[cite: 2]</div>
+                        <div class="job-meta" style="color:var(--text-muted); font-size:0.8rem; margin:2px 0;">CONCLUDED 2023[cite: 2]</div>
+                        <div style="font-size:0.85rem; color:var(--text-muted);">DDU Gorakhpur University[cite: 2]</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="job-title" style="font-size:0.95rem;">Higher Secondary Schooling[cite: 2]</div>
+                        <div class="job-meta" style="color:var(--text-muted); font-size:0.8rem; margin:2px 0;">2020[cite: 2]</div>
+                        <div style="font-size:0.85rem; color:var(--text-muted);">UP Board[cite: 2]</div>
+                    </div>
+                    <div class="timeline-item" style="margin-bottom:0;">
+                        <div class="job-title" style="font-size:0.95rem;">Secondary Schooling[cite: 2]</div>
+                        <div class="job-meta" style="color:var(--text-muted); font-size:0.8rem; margin:2px 0;">2018[cite: 2]</div>
+                        <div style="font-size:0.85rem; color:var(--text-muted);">Bihar Board[cite: 2]</div>
+                    </div>
+                </div>
+
+                <!-- High-Fidelity University Verification Hub -->
+                <div class="panel">
+                    <h2 class="section-heading">Executive Credentials</h2>
+                    
+                    <div class="logo-badge-container">
+                        <img src="image_a3f41f.png" alt="IIMA Logo" class="uni-logo-img">
+                        <div class="logo-details">
+                            <div class="logo-title">Leadership Management[cite: 2]</div>
+                            <div class="logo-issuer">IIM Ahmedabad[cite: 2]</div>
+                        </div>
+                    </div>
+
+                    <div class="logo-badge-container">
+                        <img src="image_a3f3a6.png" alt="University of London Logo" class="uni-logo-img">
+                        <div class="logo-details">
+                            <div class="logo-title">Corporate Strategy[cite: 2]</div>
+                            <div class="logo-issuer">University of London[cite: 2]</div>
+                        </div>
+                    </div>
+
+                    <div class="logo-badge-container">
+                        <img src="image_a3f3e6.png" alt="UC Irvine Logo" class="uni-logo-img">
+                        <div class="logo-details">
+                            <div class="logo-title">Human Resources Analytics[cite: 2]</div>
+                            <div class="logo-issuer">University of California, Irvine[cite: 2]</div>
+                        </div>
+                    </div>
+
+                    <div class="logo-badge-container" style="margin-bottom:0;">
+                        <img src="image_a3f085.png" alt="Northwestern University Logo" class="uni-logo-img">
+                        <div class="logo-details">
+                            <div class="logo-title">Sports Marketing</div>
+                            <div class="logo-issuer">Northwestern University</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Competency Arrays -->
+                <div class="panel">
+                    <h2 class="section-heading">Core Skills</h2>
+                    <div class="tag-cloud">
+                        <span class="tag tag-accent">AI Software Workflows</span>
+                        <span class="tag">MS Excel & Sheets[cite: 2]</span>
+                        <span class="tag">MS PowerPoint[cite: 2]</span>
+                        <span class="tag">Canva Branding Layouts[cite: 2]</span>
+                        <span class="tag">NADA Compliance Matrices[cite: 2]</span>
+                        <span class="tag">ACU Regulations Liaison[cite: 2]</span>
+                        <span class="tag">Stall Fabrication Charts</span>
+                        <span class="tag">Structural Venue Overlays[cite: 2]</span>
+                    </div>
+                </div>
+
+                <!-- Communications Metrics -->
+                <div class="panel">
+                    <h2 class="section-heading">Languages Known</h2>
+                    <div class="tag-cloud">
+                        <span class="tag tag-accent">Hindi (Native)[cite: 2]</span>
+                        <span class="tag">English (Professional Fluency)[cite: 2]</span>
+                        <span class="tag">Bhojpuri (Highly Fluent)[cite: 2]</span>
+                        <span class="tag">Bengali (Highly Fluent)[cite: 2]</span>
+                        <span class="tag" style="font-style: italic; opacity:0.7;">Linguistic Stack: French & German[cite: 2]</span>
+                    </div>
+                </div>
+
+                <!-- Honor Archives -->
+                <div class="panel">
+                    <h2 class="section-heading">Awards & Honors</h2>
+                    <div class="award-card">
+                        <div class="award-title">🏆 Youth Icon Award[cite: 2]</div>
+                        <div class="award-meta">Navbharat Nirman Trust, Gorakhpur (2022)[cite: 2]</div>
+                    </div>
+                    <div class="award-card" style="margin-bottom:0;">
+                        <div class="award-title">⚜️ Scout and Guide 'C' Certificate[cite: 2]</div>
+                        <div class="award-meta">Disciplined Command Structure Holder (2018)[cite: 2]</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            Ayush Space Hub Ecosystem • Central Verification Records Enabled
+        </footer>
+    </div>
+
+</body>
+</html>
